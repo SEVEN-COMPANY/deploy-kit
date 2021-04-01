@@ -63,7 +63,7 @@ proxy_pass phải chỉnh về đúng với config trong docker
 
 ## Config cho single page
 
-```json
+```nginx
 server {
 	listen 80;
 
@@ -102,7 +102,7 @@ server {
 
 ## Config cho nhiều page
 
-```json
+```nginx
 server {
 	listen 80;
 
