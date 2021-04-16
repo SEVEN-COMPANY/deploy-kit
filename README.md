@@ -39,7 +39,7 @@ wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sud
 ## Cài dos2unix để chuyển file sh về file dos thì server mới dọc được
 
 ```json
-    apt-get update && apt-get install dox2unix
+    apt-get update && apt-get install dos2unix
 ```
 
 ## Cài Docker-compose
