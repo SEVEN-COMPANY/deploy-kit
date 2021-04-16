@@ -42,6 +42,18 @@ wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sud
     apt-get update && apt-get install dos2unix
 ```
 
+### Cho Phép Chạy file SH (VD letsencrypt.sh )
+
+```json
+   chmod +x letsencrypt.sh
+```
+
+### Đỗi file dos về Unix (một số shell không chạy được unix)
+
+```json
+	dos2unix letsencrypt.sh
+```
+
 ## Cài Docker-compose
 
 ```json
