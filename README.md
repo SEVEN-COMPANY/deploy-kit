@@ -39,25 +39,25 @@ wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sud
 ## Cài dos2unix để chuyển file sh về file dos thì server mới dọc được
 
 ```json
-    apt-get update && apt-get install dos2unix
+apt-get update && apt-get install dos2unix
 ```
 
 ### Cho Phép Chạy file SH (VD letsencrypt.sh )
 
 ```json
-   chmod +x letsencrypt.sh
+chmod +x letsencrypt.sh
 ```
 
 ### Đỗi file dos về Unix (một số shell không chạy được unix)
 
 ```json
-	dos2unix letsencrypt.sh
+dos2unix letsencrypt.sh
 ```
 
 ## Cài Docker-compose
 
 ```json
-    apt-get update && apt-get install docker-compose
+apt-get update && apt-get install docker-compose
 ```
 
 # Letsencrypt
@@ -82,7 +82,7 @@ server {
 	server_name www.heaty566.com heaty566.com;
 
 	location / {
-     		return 301 https://www.heaty566.com$request_uri;
+     	return 301 https://www.heaty566.com$request_uri;
 	}
 }
 
@@ -101,12 +101,12 @@ server {
 
 
 	location / {
-     		proxy_pass 'http://client:3000';
+    	proxy_pass 'http://client:3000';
 
 	}
 
   	location /api {
-      proxy_pass 'http://server:4000/api';
+    	proxy_pass 'http://server:4000/api';
   	}
 }
 
@@ -121,7 +121,7 @@ server {
 	server_name www.domain1.heaty566.com domain1.heaty566.com;
 
 	location / {
-     		return 301 https://www.domain1.heaty566.com$request_uri;
+     	return 301 https://www.domain1.heaty566.com$request_uri;
 	}
 }
 
@@ -140,12 +140,11 @@ server {
 
 
 	location / {
-     		proxy_pass 'http://client:3000';
-
+     	proxy_pass 'http://client:3000';
 	}
 
   	location /api {
-      proxy_pass 'http://server:4000/api';
+      	proxy_pass 'http://server:4000/api';
   	}
 }
 
@@ -155,7 +154,7 @@ server {
 	server_name www.domain2.heaty566.com domain2.heaty566.com;
 
 	location / {
-     		return 301 https://www.domain2.heaty566.com$request_uri;
+     	return 301 https://www.domain2.heaty566.com$request_uri;
 	}
 }
 
@@ -174,12 +173,12 @@ server {
 
 
 	location / {
-     		proxy_pass 'http://client:3001';
+     	proxy_pass 'http://client:3001';
 
 	}
 
   	location /api {
-      proxy_pass 'http://server:4001/api';
+      	proxy_pass 'http://server:4001/api';
   	}
 }
 
