@@ -36,7 +36,7 @@ Thông thường thì có thể skip bước này tại trỏ hay không cũng x
 wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sudo bash install.sh
 ```
 
-## Cài dos2unix để chuyển file sh về file dos thì server mới dọc được
+## Cài dos2unix để chuyển file sh về file dos thì server mới đọc được
 
 ```json
 apt-get update && apt-get install dos2unix
