@@ -54,6 +54,12 @@ chmod +x letsencrypt.sh
 dos2unix letsencrypt.sh
 ```
 
+### Run letsencrypt.sh
+
+```json
+./letsencrypt.sh
+```
+
 ## Cài Docker-compose
 
 ```json
