@@ -190,6 +190,20 @@ server {
 
 ```
 
+# Backup MySql
+
+## Backup database
+
+```json
+docker exec CONTAINER /usr/bin/mysqldump -u root --password=root DATABASE > backup.sql
+```
+
+## Restore database
+
+```json
+cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=root DATABASE
+```
+
 # Docker (cái này phải học thôi)
 
 <a href="./file/docker-compose.yml" download>Click to download Docker Compose</a>
