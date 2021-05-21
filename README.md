@@ -204,6 +204,12 @@ docker exec CONTAINER /usr/bin/mysqldump -u root --password=root DATABASE > back
 cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=root DATABASE
 ```
 
+## Panel Controll Option, Reset username + Reset password of panel
+
+```json
+ bt
+```
+
 # Docker (cái này phải học thôi)
 
 <a href="./file/docker-compose.yml" download>Click to download Docker Compose</a>
