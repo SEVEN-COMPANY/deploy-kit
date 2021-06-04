@@ -28,30 +28,44 @@ Thông thường thì có thể skip bước này tại trỏ hay không cũng x
 
 ![Alt text](./images/dnsconfig.jpg)
 
-# Install tool for vps
+# Install tool for VPS
 
-## Thêm control panel để điều kiển dễ hơn
+# aaPanel
+
+## Installation
 
 ```json
 wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sudo bash install.sh
 ```
 
-## Cài dos2unix để chuyển file sh về file dos thì server mới đọc được
+## Panel Controll Option, Reset username + Reset password of panel
+
+```json
+ bt
+```
+
+# Dos2unix
+
+## Installation
 
 ```json
 apt-get update && apt-get install dos2unix
 ```
 
-### Cho Phép Chạy file SH (VD letsencrypt.sh )
+## Allow to run sh script
 
 ```json
 chmod +x letsencrypt.sh
 ```
 
-### Đỗi file dos về Unix (một số shell không chạy được unix)
+## Convert dos to unix and vise versa
 
 ```json
 dos2unix letsencrypt.sh
+```
+
+```json
+unix2dos letsencrypt.sh
 ```
 
 ### Run letsencrypt.sh
@@ -60,11 +74,33 @@ dos2unix letsencrypt.sh
 ./letsencrypt.sh
 ```
 
-## Cài Docker-compose
+# Docker Command Line
+
+## Installation
 
 ```json
 apt-get update && apt-get install docker-compose
 ```
+
+## Log Container
+
+```json
+docker logs <container>
+```
+
+## Running CMD into Container
+
+```json
+docker exec -it <container name> /bin/bash
+```
+
+```json
+docker exec -it <container name> <command>
+```
+
+# Example of docker-compose
+
+<a href="./file/docker-compose.yml" download>Click to download Docker Compose</a>
 
 # Letsencrypt
 
@@ -75,11 +111,25 @@ apt-get update && apt-get install docker-compose
 - nhớ chỉnh staging = 1 trước khi test tại, lỡ sai nhiều quá nó block tầm 2 3 ngày sau mới mở được (limit hiện tại là 10 lần trong 24h)
 - nếu muốn làm cho nhiều subdomain thì phải letsencrypt từng cái lần đâu tiên rồi sau đó cho bot làm
 
-# Nginx chỉnh điều hướng service
+# Database
+
+## Backup mysql database
+
+```json
+docker exec CONTAINER /usr/bin/mysqldump -u root --password=root DATABASE > backup.sql
+```
+
+## Restore mysql database
+
+```json
+cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=root DATABASE
+```
+
+# Nginx
 
 proxy_pass phải chỉnh về đúng với config trong docker
 
-## Config cho single page
+## Config for single page
 
 ```nginx
 server {
@@ -118,7 +168,7 @@ server {
 
 ```
 
-## Config cho nhiều page
+## Config for multiple pages
 
 ```nginx
 server {
@@ -189,27 +239,3 @@ server {
 }
 
 ```
-
-# Backup MySql
-
-## Backup database
-
-```json
-docker exec CONTAINER /usr/bin/mysqldump -u root --password=root DATABASE > backup.sql
-```
-
-## Restore database
-
-```json
-cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=root DATABASE
-```
-
-## Panel Controll Option, Reset username + Reset password of panel
-
-```json
- bt
-```
-
-# Docker (cái này phải học thôi)
-
-<a href="./file/docker-compose.yml" download>Click to download Docker Compose</a>
