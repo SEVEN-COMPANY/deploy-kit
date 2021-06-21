@@ -29,6 +29,21 @@ Thông thường thì có thể skip bước này tại trỏ hay không cũng x
 ![Alt text](./images/dnsconfig.jpg)
 
 # Install tool for VPS
+# One For All
+
+```json
+apt-get update &&
+apt-get upgrade &&
+apt-get install docker-compose &&
+apt-get install dos2unix &&
+ufw disable &&
+cd &&
+mkdir app && 
+cd app &&
+apt-get install vim  &&
+wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sudo bash install.sh &&
+bt 14
+```
 
 # aaPanel
 
