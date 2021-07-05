@@ -254,3 +254,8 @@ server {
 }
 
 ```
+## Config for multiple files
+```nginx
+include "/etc/nginx/conf.d/sample1.conf";
+include "/etc/nginx/conf.d/sample2.conf";
+```
